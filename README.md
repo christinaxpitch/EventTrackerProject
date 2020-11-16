@@ -24,7 +24,7 @@ This API project was to create a program that keeps track of information over ti
 
 | Return Type | Verb | URI Mapping | Functionality |
 | --- | --- | -- | -- |
-| "List<Song>" | **GET** | api/songs | Retrieve list of song of the day entries |
+| List<Song> | **GET** | api/songs | Retrieve list of song of the day entries |
 | Song | **GET** | api/songs/{songID} | Retrieve one song of the day entry by ID |
 | Song | **POST** | api/songs | Creates a new song of the day entry |
 | Song | **GET** | api/songs/artist/{artist} | Retrieve song of the day entries by artist |
