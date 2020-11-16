@@ -24,13 +24,13 @@ This API project was to create a program that keeps track of information over ti
 
 | Return Type | Verb | URI Mapping | Functionality |
 | --- | --- | -- | -- |
-| 'List<<Song>>'' | **GET** | api/songs | Retrieve list of song of the day entries |
-| 'Song' | **GET** | api/songs/{songID} | Retrieve one song of the day entry by ID |
-| 'Song' | **POST** | api/songs | Creates a new song of the day entry |
+| `List<<Song>>`| **GET** | api/songs | Retrieve list of song of the day entries |
+| `Song`| **GET** | api/songs/{songID} | Retrieve one song of the day entry by ID |
+| `Song` | **POST** | api/songs | Creates a new song of the day entry |
 | 'List<<Song>>'' | **GET** | api/songs/artist/{artist} | Retrieve song of the day entries by artist |
 | 'Boolean' | **DELETE** | api/songs/delete/{songID} | Delete a song of the day entry by it's ID |
 | 'Song' | **PUT** | api/songs/{songID} | Updates information in an existing entry by it's ID |
-| 'List<<Song>' | **GET** | api/songs/search/{keyword} | Searches song entries by a keyword|
+| 'List<<Song>>' | **GET** | api/songs/search/{keyword} | Searches song entries by a keyword|
 
 ## Lessons Learned
 This project uses Spring Data JPA and Spring REST services. We previously learned how to do CRUD operations without using the built in automated features of the repository, so it was extremely efficient to write create, read, update, delete methods this week after learning it the hard way. The search by keyword method is also implemented.
