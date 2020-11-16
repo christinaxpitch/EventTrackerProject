@@ -9,7 +9,7 @@
     </provider>
     
     
-    <class>com.skilldistillery.cc.entities.User</class>
+    <class>com.skilldistillery.cc.entities.Song</class>
     
     
     <properties>
