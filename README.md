@@ -36,5 +36,4 @@ This project uses Spring Data JPA and Spring REST services. We previously learne
 Using Postman to check the correct mappings and API testing was super useful.
 
 ## Implementation
-1. localhost:
-2. aws:
+aws link:
