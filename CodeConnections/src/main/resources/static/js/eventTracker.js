@@ -35,10 +35,10 @@ document.updateEntryForm.updateEntryButton.addEventListener('click', function(e)
 	updateEntry(songId);	
 		});
 
-document.aggregateDiv.aggrButton.addEventListener('click', function(e){
+document.getElementById("aggrButton").addEventListener('click', function(e){
 	e.preventDefault();
-	let songId = document.updateEntryForm.id.value;
-	aggregateSongs(allSongs);	
+	// let songs = document.
+	aggregateSongs(songs);	
 		});
 
 
@@ -61,7 +61,7 @@ function getSong(songId) {
 			}
 		}
 		else {
-				console.error('Song entry not found.')
+				// console.error('Song entry not found.')
 				let div = document.getElementById('songData');
 				div.textContent = 'Song entry not found';
 			}
@@ -193,10 +193,10 @@ function getAllEntries() {
 		if (xhr.readyState === 4){
 			if(xhr.status < 400){
 				let data = xhr.responseText;
-				let allSongs = JSON.parse(data);
+				let songs = JSON.parse(data);
 				displayAllEntries(allSongs);
-				aggregateSongs(allSongs);
-				
+				aggregateSongs(songs);
+
 			}
 			else{
 				let divError = document.getElementById("songList");
@@ -207,12 +207,12 @@ function getAllEntries() {
 	xhr.send();
 };
 
-function displayAllEntries(allSongs) {
+function displayAllEntries(songs) {
 	let songListDiv = document.getElementById("songList");
 	let songTable = document.createElement("table");
 	songListDiv.appendChild(songTable);
 	
-	allSongs.forEach(function(value, index, array) {
+	songs.forEach(function(value, index, array) {
 		let tableRow = document.createElement("tr");
 		songTable.appendChild(tableRow);
 		tableRow.addEventListener("click", function(e){
@@ -242,9 +242,9 @@ function displayAllEntries(allSongs) {
 
 
 
-function aggregateSongs(allSongs){
+function aggregateSongs(songs){
 	let counter = 0;
-	for (let i = 0; i < allSongs.length; i ++){
+	for (let i = 0; i < songs.length; i ++){
 		counter++;
 	}
 
@@ -282,6 +282,5 @@ function aggregateSongs(allSongs){
 // 			let newRow = document.createElement('td');
 // 			let titleName = document
 // 		}
-
 
 // }
