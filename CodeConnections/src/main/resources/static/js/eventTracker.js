@@ -137,7 +137,7 @@ xhr.open('DELETE', 'api/songs/delete/' + e);
 xhr.onreadystatechange = function() {
 	if (xhr.readyState === 4) {
 		if (xhr.status === 204) {
-			alert('Song had been successfully deleted!');
+			alert('Song has been successfully deleted!');
 			init();
 		}
 	else {
@@ -194,8 +194,9 @@ function getAllEntries() {
 			if(xhr.status < 400){
 				let data = xhr.responseText;
 				let allSongs = JSON.parse(data);
-				displayAllGoals(allSongs);
-				aggregateGoals(allSongs);
+				displayAllEntries(allSongs);
+				aggregateSongs(allSongs);
+				
 			}
 			else{
 				let divError = document.getElementById("songList");
@@ -244,7 +245,7 @@ function displayAllEntries(allSongs) {
 function aggregateSongs(allSongs){
 	let counter = 0;
 	for (let i = 0; i < allSongs.length; i ++){
-		counter++
+		counter++;
 	}
 
 	let aggregateDiv = document.getElementById("aggregateDiv");
@@ -252,9 +253,6 @@ function aggregateSongs(allSongs){
 		h3.textContent = "You have " + counter + " of song entries!";
 		aggregateDiv.appendChild(h3);
 }
-
-
-
 
 // function displayAllEntries(songs) {
 
