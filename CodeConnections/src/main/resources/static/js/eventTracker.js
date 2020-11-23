@@ -35,6 +35,12 @@ document.updateEntryForm.updateEntryButton.addEventListener('click', function(e)
 	updateEntry(songId);	
 		});
 
+document.aggregateDiv.aggrButton.addEventListener('click', function(e){
+	e.preventDefault();
+	let songId = document.updateEntryForm.id.value;
+	aggregateSongs(allSongs);	
+		});
+
 
 
 
@@ -147,10 +153,10 @@ xhr.send(null);
 };
 
 
-function updateEntry(songId) {
+function update(songId) {
 	let form = document.updateEntryForm;
 	let updatedSong = {
-		id             : form.artist.id,
+		id             : form.artist.songId,
 		artist         : form.artist.value,
         album          : form.album.value,
         songTitle      : form.songTitle.value,
@@ -235,7 +241,7 @@ function displayAllEntries(allSongs) {
 
 
 
-function aggregateGoals(allSongs){
+function aggregateSongs(allSongs){
 	let counter = 0;
 	for (let i = 0; i < allSongs.length; i ++){
 		counter++
